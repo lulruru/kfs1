@@ -1,12 +1,9 @@
 kfs/
 ├── Makefile
 ├── boot/
-│   └── boot.asm         # Code d'amorçage en assembleur
+│   └── boot.s        # Code d'amorçage en assembleur
 ├── kernel/
 │   ├── main.c           # Point d'entrée du kernel
-│   ├── io.c             # Fonctions d'E/S
-│   ├── screen.c         # Fonctions d'affichage
-│   └── utils.c          # Fonctions utilitaires (strlen, etc.)
 ├── include/
 │   ├── kernel.h         # En-têtes du noyau
 │   └── types.h          # Types personnalisés

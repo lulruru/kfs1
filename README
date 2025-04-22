@@ -1,6 +1,6 @@
-'1. 🧠 BIOS (16-bit Real Mode)
+1. 🧠 BIOS (16-bit Real Mode)
    └─> Cherche le premier secteur du disque (MBR = bootloader)
-   └─> Charge le bootloader à l''adresse 0x7C00
+   └─> Charge le bootloader à l'adresse 0x7C00
        ↓
 2. 🥾 Bootloader (toujours 16-bit Real Mode)
    └─> Configure le matériel de base si besoin
@@ -17,4 +17,4 @@
 4. 👑 Ton kernel
    └─> Initialise l’IDT (interruptions)
    └─> Configure la piles
-   └─> Lance le kernel C (ex: appel à `kmain()`)'
+   └─> Lance le kernel C (ex: appel à `kmain()`)

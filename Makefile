@@ -13,8 +13,8 @@ KERNEL_SRC=kernel/kernel.c
 BOOT_SRC=boot/boot.s
 KERNEL_OBJ=kernel.o
 BOOT_OBJ=boot.o
-KERNEL_BIN=myos.bin
-ISO=myos.iso
+KERNEL_BIN=kfs.bin
+ISO=kfs.iso
 GRUB_CFG=grub.cfg
 
 # Règle par défaut
@@ -32,7 +32,7 @@ $(KERNEL_BIN): $(BOOT_OBJ) $(KERNEL_OBJ) linker.ld
 
 $(ISO): $(KERNEL_BIN) $(GRUB_CFG)
 	mkdir -p $(GRUB_DIR)
-	cp $(KERNEL_BIN) $(BOOT_DIR)/myos.bin
+	cp $(KERNEL_BIN) $(BOOT_DIR)/kfs.bin
 	cp $(GRUB_CFG) $(GRUB_DIR)/grub.cfg
 	grub-mkrescue -o $(ISO) $(ISO_DIR)
 
@@ -41,4 +41,5 @@ clean:
 	rm -f *.o *.bin $(ISO)
 	rm -rf $(ISO_DIR)
 
+re: clean all
 .PHONY: all clean

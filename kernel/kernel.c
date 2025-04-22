@@ -118,14 +118,3 @@ void kernel_main(void) {
 	terminal_writestring("                                  | $$| $$$$$$$$\ \n");
 	terminal_writestring("                                  |__/|________/\ \n");
 }
-
-
-
-                           
-
-
-                    
-                    
-                    
- 
-					 

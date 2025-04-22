@@ -1,0 +1,20 @@
+'1. 🧠 BIOS (16-bit Real Mode)
+   └─> Cherche le premier secteur du disque (MBR = bootloader)
+   └─> Charge le bootloader à l''adresse 0x7C00
+       ↓
+2. 🥾 Bootloader (toujours 16-bit Real Mode)
+   └─> Configure le matériel de base si besoin
+   └─> Charge ton kernel en mémoire (ex: à 0x100000 ou 0x200000)
+   └─> Initialise la GDT (Global Descriptor Table)
+   └─> Active le bit PE (Protection Enable) dans CR0
+   └─> FAIT UN JMP FAR vers un segment 32-bit défini dans la GDT
+       ↓
+3. 🧪 Mode protégé (32-bit Protected Mode)
+   └─> Segmentation activée (GDT utilisée)
+   └─> Kernel commence à exécuter du vrai code 32 bits (ex: `_start`)
+   └─> Tu peux afficher du texte en VGA, gérer des interruptions, etc.
+       ↓
+4. 👑 Ton kernel
+   └─> Initialise l’IDT (interruptions)
+   └─> Configure la piles
+   └─> Lance le kernel C (ex: appel à `kmain()`)'
